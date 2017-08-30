@@ -1,4 +1,4 @@
-//import './traffic_light.styl';
+import './traffic_light.styl';
 
 function traffic_light(selector) {
   const widgetTemplate = `
@@ -30,19 +30,46 @@ function traffic_light(selector) {
   function lightLamp() {
     switch (this.getAttribute('data-operator')) {
       case 'lightRed':
+        btnRed.classList.remove('not-shine');
+        btnRed.classList.add('shines');
+
+        btnYellow.classList.remove('shines');
+        btnGreen.classList.remove('shines');
+        btnYellow.classList.add('not-shine');
+        btnGreen.classList.add('not-shine');
+/*
         this.style.backgroundColor = 'red';
         btnYellow.style.backgroundColor = '';
         btnGreen.style.backgroundColor = '';
+*/
         break;
       case 'lightYellow':
+        btnYellow.classList.remove('not-shine');
+        btnYellow.classList.add('shines');
+
+        btnRed.classList.remove('shines');
+        btnGreen.classList.remove('shines');
+        btnRed.classList.add('not-shine');
+        btnGreen.classList.add('not-shine');
+/*
         btnRed.style.backgroundColor = '';
         this.style.backgroundColor = 'yellow';
         btnGreen.style.backgroundColor = '';
+*/
         break;
       case 'lightGreen':
+        btnGreen.classList.remove('not-shine');
+        btnGreen.classList.add('shines');
+
+        btnRed.classList.remove('shines');
+        btnYellow.classList.remove('shines');
+        btnRed.classList.add('not-shine');
+        btnYellow.classList.add('not-shine');
+/*
         btnRed.style.backgroundColor = '';
         btnYellow.style.backgroundColor = '';
         this.style.backgroundColor = 'green';
+*/
         break;
     }
   }

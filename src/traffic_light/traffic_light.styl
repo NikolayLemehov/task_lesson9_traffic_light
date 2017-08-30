@@ -1,33 +1,40 @@
+//$lamp-size = 50px
+
+lamp-size(width, height = width)
+  width width
+  height height
+
 .traffic-light
   width 100%
   border 1px solid red
   margin 50px auto
-
-
-.traffic-light-root
-  max-width 50px
-  padding 20px
+  &-root
+    max-width 50px
+    padding 20px
 //  max-height 900px
 
 .lamp
   border 1px solid black
   border-radius 50%
-  height 50px
-  width 50px
   margin-bottom 5px
+  lamp-size(50px)
   /*
-  &:hover
-    background white
+  height $lamp-size
+  width $lamp-size
   */
 
-/*
-.red-light:hover
+.red-light
   background red
 
-.yellow-light:hover
+.yellow-light
   background yellow
 
-.green-light:hover
+.green-light
   background green
-*/
+
+.shines
+  opacity 1
+
+.not-shine
+  opacity 0.1
 
